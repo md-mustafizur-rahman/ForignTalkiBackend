@@ -33,7 +33,7 @@ public class SecurityConfiguration {
                 .csrf(csrf -> csrf.disable()) // Disable CSRF
 //                .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Enable CORS with the configuration source
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll().requestMatchers("translate/**").permitAll() // Allow access to /auth/** without authentication
+                        .requestMatchers("/auth/**").permitAll() // Allow access to /auth/** without authentication
                         .anyRequest().authenticated() // Require authentication for all other requests
                 )
                 .sessionManagement(session -> session
